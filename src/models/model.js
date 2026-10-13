@@ -213,6 +213,13 @@ export const searchRoutes = async (keyword) => {
     });
 };
 
+export const getMonthNames = (months) => {
+    return months.map(number => {
+        const date = new Date(2000, number - 1, 1);
+        return date.toLocaleString('en-US', { month: 'long' });
+    })
+}
+
 // CONFIRMATION MODEL FUNCTIONS
 
 export const createConfirmation = async (confirmationData) => {
