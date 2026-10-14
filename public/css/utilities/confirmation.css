@@ -406,14 +406,143 @@ article.confirmation-page {
 }
 
 @media print {
-    article.confirmation-page {
-        .confirmation-actions {
+    header.content-grid {
+        img {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+        nav { 
             display: none;
+        }
+    }
+
+    article.confirmation-page {
+        .confirmation-content {
+            .confirmation-actions {
+                display: none;
+            }
+            .section-title {
+                font-size: var(--font-size-md);
+                line-height: 0;
+                padding-bottom: var(--space-sm);
+                border-bottom: none;
+            }
+            .booking-details {
+                .details-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    .detail-card {
+                        padding: 2px;
+                        .detail-icon {
+                            display: none;
+                        }
+                        
+                        .detail-content {
+                            .detail-value {
+                                font-size: var(--font-size-xs);
+                            }
+                        }
+                    }
+                }
+            }
+            .passengers-info {
+                .passengers-list {
+                    .passenger-info-card {
+                        .passenger-header {
+                            .passenger-title {
+                                font-size: var(--font-size-sm);
+                            }
+                        }
+                        .passenger-details {
+                            flex-direction: row;
+                            gap: var(--space-lg);
+
+                            .passenger-detail {
+                                flex: 1;
+                                
+                                .passenger-value {
+                                    font-size: var(--font-size-sm);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .next-steps {
+                .steps-list {
+                    gap: 2px;
+
+                    .step-item {
+                        gap: 2px;
+
+                        .step-number {
+                            display: none;
+                        }
+
+                        .step-content {
+                            .step-title {
+                                font-size: var(--font-size-sm);
+                            }
+
+                            .step-description {
+                                font-size: var(--font-size-xs);
+                            }
+                        }
+                    }
+                }
+            }
+            .important-info {
+                padding: var(--space-sm);
+
+                .info-title {
+                    font-size: var(--font-size-md);
+                }
+
+                .info-list {
+                    gap: var(--space-xs);
+
+                    li {
+                        line-height: var(--line-height-sm);
+                        padding-left: var(--space-sm);
+                    }
+                }
+            }
         }
 
         .confirmation-header {
             background-color: white;
             border: 2px solid var(--clr-primary);
+            padding: 2px;
+            gap: 2px;
+            margin-left: 150px;
+            
+            .success-icon {
+                display: none;
+            }
+
+            .confirmation-title {
+                font-size: var(--font-size-md);
+            }
+
+            .confirmation-message {
+                font-size: var(--font-size-sm);
+                line-height: var(--line-height-sm);
+                max-width: 1000px;
+            }
+
+            .booking-reference {
+                gap: 2px;
+                padding: var(--space-sm);
+                .reference-number {
+                    font-size: var(--font-size-md)
+                }
+            }
         }
+    }
+
+    footer.content-grid {
+        display: none !important;
     }
 }
